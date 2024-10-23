@@ -27,13 +27,19 @@ def create_sign(*args) -> str:
     return md5(sign_str.encode("utf-8")).hexdigest()
 
 
-def aes_encrypt(plaintext: str) -> str:
+def aes_encrypt(
+    plaintext: str, key: str = "23DbtQHR2UMbH6mJ", out_format: str = "hex"
+) -> str:
     """AES加密。
 
     该方法使用指定的密钥对给定的明文字符串进行AES加密, 并返回加密后的密文。
 
     :param plaintext: 明文字符串。
     :type plaintext: str
+    :param key: AES密钥, 默认 "23DbtQHR2UMbH6mJ"。
+    :type key: str
+    :param out_format: 输出格式, 默认 "hex"。
+    :type out_format: str
 
     :return: 加密后的密文。
     :rtype: str
@@ -41,7 +47,7 @@ def aes_encrypt(plaintext: str) -> str:
     :raises ValueError: 如果加密失败, 抛出包含详细错误信息的异常。
     """
     try:
-        cipher = AESECBPKCS5Padding("23DbtQHR2UMbH6mJ", "hex")
+        cipher = AESECBPKCS5Padding(key, out_format)
         ciphertext = cipher.encrypt(plaintext)
         return ciphertext
     except Exception as e:
@@ -49,13 +55,19 @@ def aes_encrypt(plaintext: str) -> str:
         raise ValueError(f"加密失败: {str(e)}")
 
 
-def aes_decrypt(ciphertext: str) -> str:
+def aes_decrypt(
+    ciphertext: str, key: str = "23DbtQHR2UMbH6mJ", out_format: str = "hex"
+) -> str:
     """AES解密。
 
     该方法使用指定的密钥对给定的密文字符串进行AES解密, 并返回解密后的明文。
 
     :param ciphertext: 密文字符串。
     :type ciphertext: str
+    :param key: AES密钥, 默认 "23DbtQHR2UMbH6mJ"。
+    :type key: str
+    :param out_format: 输出格式, 默认 "hex"。
+    :type out_format: str
 
     :return: 解密后的明文。
     :rtype: str
@@ -63,7 +75,7 @@ def aes_decrypt(ciphertext: str) -> str:
     :raises ValueError: 如果解密失败, 抛出包含详细错误信息的异常。
     """
     try:
-        cipher = AESECBPKCS5Padding("23DbtQHR2UMbH6mJ", "hex")
+        cipher = AESECBPKCS5Padding(key, out_format)
         plaintext = cipher.decrypt(ciphertext)
         return plaintext
     except Exception as e:

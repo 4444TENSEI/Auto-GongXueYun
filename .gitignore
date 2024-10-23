@@ -2,6 +2,9 @@
 .venv/
 script/
 __pycache__/
+version/
+cv2/
+
 
 user.json
 *.zip

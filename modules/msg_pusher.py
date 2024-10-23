@@ -14,7 +14,6 @@ def push_to_pushplus(users, title, content, token):
     )
     resp = requests.post(url)
     result = resp.json()
-
     if result["code"] == 200:
         for user in users:
             print(f'√ [{user["remark"]}/{user["phone"]}]消息推送成功！')

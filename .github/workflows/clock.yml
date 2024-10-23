@@ -19,10 +19,18 @@ jobs:
         
     - name: Install depend
       run: |
+        pip install certifi
+        pip install cffi
+        pip install charset-normalizer
+        pip install cryptography
+        pip install idna
+        pip install numpy
+        pip install pycparser
         pip install requests
+        pip install urllib3
 
     - name: Start sign
       env:
         USERS: ${{ secrets.USERS }}
       run: |
-        python main.py
+        python index.py
