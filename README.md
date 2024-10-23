@@ -20,7 +20,7 @@
 
 暂时有部分依赖缺失的问题，目前没有时间测试，有心人可以查看项目目录下的**/github/workflows/clock.yml**文件，更改加入缺失的依赖包并自行测试
 
-1. Fork仓库，修改一下上方的json配置文件，复制内容
+1. Fork仓库，修改一下本文下方示例中的json配置，复制内容
 2. 依次进入克隆后的仓库页面上方的:`Settings`  → `Actions secrets and variables` → `Actions`
 3. 点击`New repository secret`，Name输入框填写`USER`，Secret输入框里粘贴刚刚复制的`json配置`，如果要多用户，则复制一次数据体自己改改，然后点击下方绿色`Add secret`按钮保存
 4. 回到仓库左上角的`Actions`，点击左侧的`打卡`，点击右侧的`Run workflow`，**再次点击**绿色的Run workflow按钮即可开始定时任务
