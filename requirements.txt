@@ -1,3 +1,10 @@
+certifi==2024.8.30
+cffi==1.17.1
+charset-normalizer==3.4.0
 cryptography==43.0.1
+idna==3.10
 numpy==2.1.2
+opencv-python==4.10.0.84
+pycparser==2.22
 requests==2.32.3
+urllib3==2.2.3
